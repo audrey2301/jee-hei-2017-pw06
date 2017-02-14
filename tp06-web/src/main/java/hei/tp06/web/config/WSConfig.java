@@ -29,11 +29,11 @@ public class WSConfig {
     @Bean
     public Server jaxrsServer(JacksonJsonProvider jsonProvider){
         JAXRSServerFactoryBean sf = new JAXRSServerFactoryBean();
-        List<Object> serviceBeans = new ArrayList<>();
+        List<Object> serviceBeans = new ArrayList();
         serviceBeans.addAll(controllers);
         sf.setServiceBeans(serviceBeans);
         sf.setProviders(Arrays.asList(jsonProvider));
-        sf.setAddress("/");
+        sf.setAddress("/tp06-web/");
         sf.setBus(cxfBus);
         return sf.create();
     }
