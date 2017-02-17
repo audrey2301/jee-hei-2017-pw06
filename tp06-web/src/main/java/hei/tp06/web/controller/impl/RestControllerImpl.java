@@ -16,7 +16,6 @@ import java.util.List;
  * Created by audrey on 14/02/2017.
  */
 @Named
-@Path("/tp06-web")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class RestControllerImpl implements RestController {
@@ -27,17 +26,25 @@ public class RestControllerImpl implements RestController {
     private EvenementService evenementService;
 
     @GET
-    @Path("/api/evenements/")
+    @Path("/evenements/")
     public List<Evenement> getListEvenement(){
         logger.info("Demande du challenge courant avec la clé {}");
         return evenementService.findAll();
     }
 
     @GET
-    @Path("/api/evenements/{id}")
+    @Path("/evenements/{id}")
     public List<Evenement> getListEvenementById(@PathParam("id") long id){
         logger.info("Demande de la liste des evenements par id {}", id);
         return evenementService.findById(id);
+    }
+
+    @POST
+    @Path("/evenements/")
+    @Consumes("application/json")
+    public void jsonDoc(Evenement evenement){
+        logger.info("Enregistre un evenement", evenement);
+        evenementService.saveEvenement(evenement);
     }
 }
 
