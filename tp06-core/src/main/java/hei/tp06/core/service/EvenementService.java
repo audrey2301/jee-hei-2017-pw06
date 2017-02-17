@@ -12,10 +12,6 @@ public interface EvenementService {
 
     Evenement findById(Long id);
 
-    List<Evenement> findByTitle(String title);
-
-    List<Evenement> findByStart(Date start);
-
     void saveEvenement(Evenement evenement);
 
     List<Evenement> findAll();

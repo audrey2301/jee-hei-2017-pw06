@@ -34,7 +34,6 @@ public class WSConfig {
         sf.setServiceBeans(serviceBeans);
         sf.setProviders(Arrays.asList(jsonProvider));
         sf.setAddress("/");
-        sf.setAddress("/tp06-web/");
         sf.setBus(cxfBus);
         return sf.create();
     }

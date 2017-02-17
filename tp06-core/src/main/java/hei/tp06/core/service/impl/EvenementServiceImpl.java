@@ -24,14 +24,6 @@ public class EvenementServiceImpl implements EvenementService {
         return evenementDao.findById(id);
     }
 
-    public List<Evenement> findByTitle(String title) {
-        return evenementDao.findByTitle(title);
-    }
-
-    public List<Evenement> findByStart(Date start) {
-        return evenementDao.findByStart(start);
-    }
-
     public void saveEvenement(Evenement evenement) {
         evenementDao.save(evenement);
     }

@@ -32,6 +32,8 @@ public class Evenement {
         this.description = description;
     }
 
+    public Evenement(){}
+
 //    @Override
 //    public String toString() {return "Evenement [ id=" +id+ ", date de début=" +start+ ", date de fin=" +end+ ", titre de l'évènement="
 //            +title+ ", couleur=" +color+ ", description=" +description;}

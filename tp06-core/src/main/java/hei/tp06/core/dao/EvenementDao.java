@@ -13,7 +13,5 @@ public interface EvenementDao extends JpaRepository<Evenement,Long> {
 
     Evenement findById(Long id);
 
-    List<Evenement> findByTitle(String title);
-
-    List<Evenement> findByStart(Date start);
+    List<Evenement> findAll();
 }
