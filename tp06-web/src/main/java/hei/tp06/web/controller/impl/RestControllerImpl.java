@@ -34,7 +34,7 @@ public class RestControllerImpl implements RestController {
 
     @GET
     @Path("/evenements/{id}")
-    public List<Evenement> getListEvenementById(@PathParam("id") long id){
+    public Evenement getListEvenementById(@PathParam("id") Long id){
         logger.info("Demande de la liste des evenements par id {}", id);
         return evenementService.findById(id);
     }
